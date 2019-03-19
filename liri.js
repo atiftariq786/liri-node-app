@@ -6,6 +6,7 @@
 
 var axios = require("axios");
 var moment = require('moment');
+var spotify = require('node-spotify-api');
 
 
 // Grab the movieName 
@@ -17,7 +18,7 @@ switch (action){
   case "concert-this" :artist(value);
   break;
 
-  case "spotify-this-song": ff();
+  case "spotify-this-song": spotifySong(value);
   break;
 
   case "movie-this": movie(value);
@@ -64,7 +65,33 @@ function artist(artistEvents) {
     });
   
   };
-  
+//---------------------------------------------------------------------------
+
+  function spotifySong(songName){
+
+    // Default input song
+if(songName === undefined){
+  songName = "The Sign";
+}
+
+var queryUrl = " ";
+
+
+console.log(queryUrl);
+
+axios.get(queryUrl).then(
+  function(response) {
+
+    console.log(response.data);
+    //console.log("Song Name: " + response.data);
+
+
+
+
+
+  });
+  }
+  //---------------------------------------------------------------------------
 
 function movie(movieName) {
 
