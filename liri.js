@@ -1,12 +1,10 @@
-// require("dotenv").config();
+ require("dotenv").config();
 
-//var keys = require("./keys.js");
-
-
+var keys = require("./keys.js");
 
 var axios = require("axios");
 var moment = require('moment');
-var spotify = require('node-spotify-api');
+var Spotify = require("node-spotify-api");
 
 
 // Grab the movieName 
@@ -67,29 +65,49 @@ function artist(artistEvents) {
   };
 //---------------------------------------------------------------------------
 
-  function spotifySong(songName){
+// client secret: 4ea020acbc2b43e7b93bb3e4b00fd76d
+// client id : 96d5f579beff4d85a74254d9f7197c23
 
-    // Default input song
-if(songName === undefined){
-  songName = "The Sign";
-}
-
-var queryUrl = " ";
+;
 
 
-console.log(queryUrl);
+function spotifySong(songName){
+  var spotify = new Spotify(keys.spotify);
 
-axios.get(queryUrl).then(
-  function(response) {
+  if(songName === undefined){
+    songName = "The Sign by Ace of Base";
+  }
 
-    console.log(response.data);
+  spotify
+  .search({ type: 'track', query: songName, limit: 1 })
+  .then(function(response) {
+    
+    //console.log(response);
+    console.log(" Artist: " + response.tracks.items[0].album.artists[0].name);
+    console.log("The song's name: " + response.tracks.items[0].name);
+    console.log("A preview link of the song from Spotify: " + response.tracks.items[0].preview_url);
+    console.log("The album that the song is from: " + response.tracks.items[0].album.name);
+   
+    
+    
+
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
+  
+
+
+
+
+    //console.log(response.data);
     //console.log("Song Name: " + response.data);
 
 
 
 
 
-  });
+  
   }
   //---------------------------------------------------------------------------
 
@@ -137,3 +155,5 @@ axios.get(queryUrl).then(
   });
 
 };
+//------------------------------------------------------
+
