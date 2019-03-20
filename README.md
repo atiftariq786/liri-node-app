@@ -13,7 +13,7 @@ OMDb API (via request npm module)
 
 ## Liri App Image/video View
 
-![alt text]( https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri Run time view")
+(https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri-Node-App_Video)
 
 ## Liri Description
 
