@@ -1,16 +1,21 @@
- require("dotenv").config();
+
+
+require("dotenv").config();
 
 var keys = require("./keys.js");
 
 var axios = require("axios");
 var moment = require('moment');
 var Spotify = require("node-spotify-api");
+var fs = require("fs");
 
 
 // Grab the movieName 
-var action = process.argv[2];
-var value = process.argv[3];
-
+var actArg = process.argv[2];
+var valueArg = process.argv[3];
+mainCall(actArg,valueArg);
+// main call for Do what it says
+function mainCall(action,value){
 switch (action){
 
   case "concert-this" :artist(value);
@@ -22,22 +27,21 @@ switch (action){
   case "movie-this": movie(value);
   break;
   
-  case "do-what-it-says": ff();
+  case "do-what-it-says": doWhatItSays();
   break;
 
   default:
   return console.log("No Command Provided")
 
+  }
 }
-
 function artist(artistEvents) {
 
   if(artistEvents === undefined ){
     artistEvents = "Drake";
   }
 
-  
-  
+    
   var queryUrl = "https://rest.bandsintown.com/artists/" + artistEvents + "/events?app_id=89edd9fd-9632-4b49-b6bf-d77e59aee2fd";
   
   
@@ -57,19 +61,11 @@ function artist(artistEvents) {
       var dateTime = moment(apiresponse[0].datetime).format("MM, DD, YYYY, h:mm a");
       console.log("Event Date: " + dateTime);
   
-      
-           
-    
+                    
     });
   
   };
 //---------------------------------------------------------------------------
-
-// client secret: 4ea020acbc2b43e7b93bb3e4b00fd76d
-// client id : 96d5f579beff4d85a74254d9f7197c23
-
-;
-
 
 function spotifySong(songName){
   var spotify = new Spotify(keys.spotify);
@@ -87,27 +83,13 @@ function spotifySong(songName){
     console.log("The song's name: " + response.tracks.items[0].name);
     console.log("A preview link of the song from Spotify: " + response.tracks.items[0].preview_url);
     console.log("The album that the song is from: " + response.tracks.items[0].album.name);
-   
-    
-    
-
+           
   })
   .catch(function(err) {
     console.log(err);
   });
-  
 
-
-
-
-    //console.log(response.data);
-    //console.log("Song Name: " + response.data);
-
-
-
-
-
-  
+     
   }
   //---------------------------------------------------------------------------
 
@@ -157,3 +139,22 @@ axios.get(queryUrl).then(
 };
 //------------------------------------------------------
 
+function doWhatItSays() {
+	fs.readFile("random.txt", "utf8", function(error, data) {
+		if (error) {
+			return console.log(error);
+		} else {
+      var dataArr = data.split(",");
+      
+      console.log(dataArr);
+
+			var randVal = dataArr[1];
+			var randAct = dataArr[0];
+
+			mainCall(randAct , randVal);
+			
+		}
+
+		
+	});
+}
