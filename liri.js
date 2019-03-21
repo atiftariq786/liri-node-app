@@ -8,7 +8,7 @@ var axios = require("axios");
 var moment = require('moment');
 var Spotify = require("node-spotify-api");
 var fs = require("fs");
-
+var divider = "\n------------------------------------------------------------\n\n";
 
 // Grab the movieName 
 var actArg = process.argv[2];
@@ -61,6 +61,21 @@ function artist(artistEvents) {
       var dateTime = moment(apiresponse[0].datetime).format("MM, DD, YYYY, h:mm a");
       console.log("Event Date: " + dateTime);
   
+      // log artist all search data to log.txt file
+
+      var artistData = [
+        "Venue Name: " + apiresponse[0].venue.name,
+        "Location Country: " + apiresponse[0].venue.country,
+        "Location City: " + apiresponse[0].venue.city,
+        "Event Date: " + dateTime,
+        
+      ].join("\n\n");
+
+      // Append showData and the divider to log.txt, print showData to the console
+      fs.appendFile("log.txt", artistData + divider, function(err) {
+        if (err) throw err;
+       
+      });
                     
     });
   
