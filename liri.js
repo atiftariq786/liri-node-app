@@ -1,7 +1,6 @@
 
 
 require("dotenv").config();
-
 var keys = require("./keys.js");
 
 var axios = require("axios");
@@ -14,6 +13,7 @@ var divider = "\n------------------------------------------------------------\n\
 var actArg = process.argv[2];
 var valueArg = process.argv[3];
 mainCall(actArg,valueArg);
+
 // main call for Do what it says
 function mainCall(action,value){
 switch (action){
@@ -35,6 +35,8 @@ switch (action){
 
   }
 }
+//--------------------------------------------------------------------------------
+
 function artist(artistEvents) {
 
   if(artistEvents === undefined ){
@@ -51,8 +53,8 @@ function artist(artistEvents) {
     function(response) {
 
       var apiresponse = response.data;
-     // console.log(apiresponse);
-           
+      
+                 
       console.log("Venue Name: " + apiresponse[0].venue.name);
       console.log("Location Country: " + apiresponse[0].venue.country);
       console.log("Location City: " + apiresponse[0].venue.city);
@@ -69,7 +71,7 @@ function artist(artistEvents) {
         "Location City: " + apiresponse[0].venue.city,
         "Event Date: " + dateTime,
         
-      ].join("\n\n");
+      ].join("\n");
 
       // Append showData and the divider to log.txt, print showData to the console
       fs.appendFile("log.txt", artistData + divider, function(err) {
@@ -80,7 +82,7 @@ function artist(artistEvents) {
     });
   
   };
-//---------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 
 function spotifySong(songName){
   var spotify = new Spotify(keys.spotify);
@@ -93,20 +95,37 @@ function spotifySong(songName){
   .search({ type: 'track', query: songName, limit: 1 })
   .then(function(response) {
     
-    //console.log(response);
     console.log(" Artist: " + response.tracks.items[0].album.artists[0].name);
     console.log("The song's name: " + response.tracks.items[0].name);
     console.log("A preview link of the song from Spotify: " + response.tracks.items[0].preview_url);
     console.log("The album that the song is from: " + response.tracks.items[0].album.name);
+
+  // log spotify all search data to log.txt file
+
+  var spotifyData = [
+    "Artist: " + response.tracks.items[0].album.artists[0].name,
+    "The song's name: " + response.tracks.items[0].name,
+    "A preview link of the song from Spotify: " + response.tracks.items[0].preview_url,
+    "The album that the song is from: " + response.tracks.items[0].album.name,
+    
+    ].join("\n");
+  
+    fs.appendFile("log.txt", spotifyData + divider, function(err) {
+    if (err) throw err;
+   
+  });
+
            
   })
   .catch(function(err) {
     console.log(err);
   });
 
-     
+
+   
   }
-  //---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------
 
 function movie(movieName) {
 
@@ -123,19 +142,16 @@ console.log(queryUrl);
 
 axios.get(queryUrl).then(
   function(response) {
-    //console.log(response.data);
+    
     console.log("Movie Title: " + response.data.Title);
     console.log("Release Year: " + response.data.Year);
     console.log("ImdbRating: " + response.data.imdbRating);
 
     var rottenRating = response.data.Ratings;
 
-
-
     if (rottenRating && rottenRating.length >= 2){
 
-      console.log("Rotten Tomatoes Rating: " + rottenRating[1].Value);
-     
+      console.log("Rotten Tomatoes Rating: " + rottenRating[1].Value);     
      
     }
     else  {
@@ -147,8 +163,26 @@ axios.get(queryUrl).then(
     console.log("Plot: " + response.data.Plot);
     console.log("Actors: " + response.data.Actors);
     
-     
+  // log movie all search data to log.txt file
+
+  var movieData = [
+    "Movie Title: " + response.data.Title,
+    "Release Year: " + response.data.Year,
+    "ImdbRating: " + response.data.imdbRating,
+    "Rotten Tomatoes Rating: " + rottenRating[1].Value,
+    "Country: " + response.data.Country,
+    "Language: " + response.data.Language,
+    "Plot: " + response.data.Plot,
+    "Actors: " + response.data.Actors,
+   
+    ].join("\n");
   
+  // Append showData and the divider to log.txt, print showData to the console
+    fs.appendFile("log.txt", movieData + divider, function(err) {
+    if (err) throw err;
+   
+  }); 
+ 
   });
 
 };
@@ -159,10 +193,8 @@ function doWhatItSays() {
 		if (error) {
 			return console.log(error);
 		} else {
-      var dataArr = data.split(",");
-      
-      console.log(dataArr);
-
+      var dataArr = data.split(",");   
+     
 			var randVal = dataArr[1];
 			var randAct = dataArr[0];
 

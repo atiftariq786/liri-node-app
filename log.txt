@@ -1,15 +1,50 @@
+Movie Title: Mr. Nobody
+Release Year: 2009
+ImdbRating: 7.8
+Rotten Tomatoes Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+------------------------------------------------------------
+
+Movie Title: Titanic
+Release Year: 1997
+ImdbRating: 7.8
+Rotten Tomatoes Rating: 89%
+Country: USA
+Language: English, Swedish
+Plot: A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
+Actors: Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates
+------------------------------------------------------------
+
 Venue Name: 3Arena
-
 Location Country: Ireland
-
 Location City: Dublin
-
 Event Date: 03, 21, 2019, 6:30 pm
 ------------------------------------------------------------
 
-Venue Name: 3Arena,Location Country: Ireland,Location City: Dublin,Event Date: 03, 21, 2019, 6:30 pm
+Venue Name: Stifel Theatre
+Location Country: United States
+Location City: St. Louis
+Event Date: 04, 13, 2019, 8:00 pm
 ------------------------------------------------------------
 
-Venue Name: 3Arena,Location Country: Ireland,Location City: Dublin,Event Date: 03, 21, 2019, 6:30 pm
+Artist: Karaoke Box
+The song's name: I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
+A preview link of the song from Spotify: https://p.scdn.co/mp3-preview/56ce61443e2a6475875fb9c5ab0bacf46a2e217f?cid=96d5f579beff4d85a74254d9f7197c23
+The album that the song is from: Karaoke Box: Reggae Greatest Hits
+------------------------------------------------------------
+
+Artist: The B-52's
+The song's name: Love Shack
+A preview link of the song from Spotify: https://p.scdn.co/mp3-preview/33813193c01f1c42416b328c7f5f3116cb603865?cid=96d5f579beff4d85a74254d9f7197c23
+The album that the song is from: Cosmic Thing
+------------------------------------------------------------
+
+Artist: Backstreet Boys
+The song's name: I Want It That Way
+A preview link of the song from Spotify: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=96d5f579beff4d85a74254d9f7197c23
+The album that the song is from: The Hits--Chapter One
 ------------------------------------------------------------
 
