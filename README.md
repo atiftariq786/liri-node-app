@@ -14,20 +14,23 @@ Read commands and queries from file.
 
 ## Liri App Videos
 
-    (https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri-Node-App_Video)
+    (https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri Node App Video)
 
-    (https://drive.google.com/open?id=1OvCkyQ-5LgoM8vYTg5FM2D1gTpLrhaM9 "Liri-Log-All-Data_Video)
+    (https://drive.google.com/open?id=1OvCkyQ-5LgoM8vYTg5FM2D1gTpLrhaM9 "Liri Log All Data Video)
 
 ## Liri App Images
 
 ** Liri-App_Log All Data Image
-![alt text]( "Liri-App_Log All Data Image")
+
+![alt text](https://github.com/atiftariq786/liri-node-app/blob/master/assets/images/Liri_Log%20Data%20Image.png?raw=true "Liri App Log All Data Image")
 
 ** Liri-App_Runtime Data Image1
-![alt text]( "Liri-App_Runtime Data Image1")
+
+![alt text](https://github.com/atiftariq786/liri-node-app/blob/master/assets/images/Liri-App_Runtime%20Image.png?raw=true "Liri App Runtime Data Image1")
 
 ** Liri-App_Log All Data Image2
-![alt text]( "Liri-App_Log All Data Image2")
+
+![alt text](https://github.com/atiftariq786/liri-node-app/blob/master/assets/images/Liri-App_Runtime%20Image2.png?raw=true "Liri App Log All Data Image2")
 
 ## Liri Description
 
