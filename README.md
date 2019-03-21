@@ -14,9 +14,13 @@ Read commands and queries from file.
 
 ## Liri App Videos
 
-    (https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri Node App Video)
+** Liri Node App Video Link
 
-    (https://drive.google.com/open?id=1OvCkyQ-5LgoM8vYTg5FM2D1gTpLrhaM9 "Liri Log All Data Video)
+[I'm an inline-style link with title](https://drive.google.com/open?id=13a-3xUq5r1ScplIsou3pSELLssAsWnLX "Liri Node App Video")
+
+** Liri Log All Data Video Link
+
+[I'm an inline-style link with title](https://drive.google.com/open?id=1OvCkyQ-5LgoM8vYTg5FM2D1gTpLrhaM9 "Liri Log All Data Video")
 
 ## Liri App Images
 
